@@ -1,5 +1,6 @@
 
 const editor = document.getElementById('editor');
+const themeToggler = document.getElementById('theme-toggler');
 
 let isWriteMode = false;
 let currentTheme = 'theme-dark';
@@ -11,7 +12,8 @@ This is a simple markdown editor that replaces your new tab page. Here are the s
 
 - **Cmd+X / Ctrl+X:** Switch to Write Mode
 - **Cmd+S / Ctrl+S:** Switch to Read Mode
-- **Cmd+T / Ctrl+T:** Toggle Theme
+
+And you can use the switch in the bottom right to toggle the theme.
 
 ## Markdown Examples
 
@@ -25,12 +27,12 @@ This is a simple markdown editor that replaces your new tab page. Here are the s
 
 ### Code
 
-\`\`\`javascript
+'''javascript
 // This is a javascript code block
 function greet() {
   console.log("Hello, world!");
 }
-\`\`\`
+'''
 
 ### Blockquotes
 
@@ -89,6 +91,9 @@ editor.addEventListener('keyup', () => {
   }
 });
 
+// Handle theme toggler click
+themeToggler.addEventListener('click', toggleTheme);
+
 // Handle keyboard shortcuts
 document.addEventListener('keydown', (e) => {
   // Use e.ctrlKey for cross-platform compatibility (works with Cmd on Mac)
@@ -100,8 +105,5 @@ document.addEventListener('keydown', (e) => {
       e.preventDefault();
       setWriteMode();
     }
-  } else if ((e.metaKey || e.ctrlKey) && e.key === 't') {
-    e.preventDefault();
-    toggleTheme();
   }
 });

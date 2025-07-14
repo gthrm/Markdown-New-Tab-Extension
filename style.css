@@ -5,6 +5,8 @@ body.theme-dark {
   --editor-background-color: #252526;
   --editor-border-color: #3c3c3c;
   --link-color: #3794ff;
+  --toggler-background: #3c3c3c;
+  --toggler-foreground: #d4d4d4;
 }
 
 /* VS Code Light+ Theme */
@@ -14,6 +16,8 @@ body.theme-light {
   --editor-background-color: #f3f3f3;
   --editor-border-color: #e7e7e7;
   --link-color: #007acc;
+  --toggler-background: #e7e7e7;
+  --toggler-foreground: #000000;
 }
 
 body {
@@ -39,6 +43,33 @@ body {
 #editor[contenteditable="true"] {
   white-space: pre-wrap;
   word-wrap: break-word;
+}
+
+#theme-toggler {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 26px;
+  background-color: var(--toggler-background);
+  border-radius: 13px;
+  cursor: pointer;
+}
+
+#theme-toggler::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  background-color: var(--toggler-foreground);
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+body.theme-light #theme-toggler::before {
+  transform: translateX(24px);
 }
 
 #editor:not([contenteditable="true"]) a {
