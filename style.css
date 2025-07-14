@@ -1,0 +1,87 @@
+/* VS Code Dark+ Theme */
+body.theme-dark {
+  --background-color: #1e1e1e;
+  --text-color: #d4d4d4;
+  --editor-background-color: #252526;
+  --editor-border-color: #3c3c3c;
+  --link-color: #3794ff;
+}
+
+/* VS Code Light+ Theme */
+body.theme-light {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --editor-background-color: #f3f3f3;
+  --editor-border-color: #e7e7e7;
+  --link-color: #007acc;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+#editor {
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  padding: 20px;
+  background-color: var(--editor-background-color);
+  border: 1px solid var(--editor-border-color);
+  outline: none;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Preserve whitespace in write mode */
+#editor[contenteditable="true"] {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+#editor:not([contenteditable="true"]) a {
+    color: var(--link-color);
+}
+
+#editor:not([contenteditable="true"]) h1,
+#editor:not([contenteditable="true"]) h2,
+#editor:not([contenteditable="true"]) h3,
+#editor:not([contenteditable="true"]) h4,
+#editor:not([contenteditable="true"]) h5,
+#editor:not([contenteditable="true"]) h6 {
+    border-bottom: 1px solid var(--editor-border-color);
+    padding-bottom: 0.3em;
+}
+
+#editor:not([contenteditable="true"]) blockquote {
+    border-left: 0.25em solid var(--editor-border-color);
+    padding: 0 1em;
+    color: #6a737d;
+}
+
+#editor:not([contenteditable="true"]) code {
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    background-color: rgba(27,31,35,0.05);
+    border-radius: 3px;
+}
+
+body.theme-dark #editor:not([contenteditable="true"]) code {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#editor:not([contenteditable="true"]) pre {
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f6f8fa;
+    border-radius: 3px;
+}
+
+body.theme-dark #editor:not([contenteditable="true"]) pre {
+    background-color: #2d2d2d;
+}
