@@ -77,32 +77,23 @@ function generateExportFilename() {
 function exportMarkdown() {
   const filename = generateExportFilename();
   const content = markdownContent || defaultMarkdown;
-  
+
   // Create blob with markdown content
   const blob = new Blob([content], { type: "text/markdown;charset=utf-8" });
-  
+
   // Create temporary download link
   const link = document.createElement("a");
   link.href = URL.createObjectURL(blob);
   link.download = filename;
-  
+
   // Trigger download
   document.body.appendChild(link);
   link.click();
-  
+
   // Clean up
   document.body.removeChild(link);
   URL.revokeObjectURL(link.href);
 }
-
-// Handle messages from background script
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if (message.command === "toggle-write-mode") {
-    setWriteMode();
-  } else if (message.command === "toggle-read-mode") {
-    setReadMode();
-  }
-});
 
 // Main initialization logic
 document.addEventListener("DOMContentLoaded", () => {

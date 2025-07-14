@@ -3,28 +3,12 @@
   "name": "Markdown New Tab",
   "version": "1.0.1",
   "description": "A new tab page that acts as a markdown editor for notes.",
-  "permissions": ["storage", "commands", "activeTab"],
+  "permissions": ["storage"],
   "chrome_url_overrides": {
     "newtab": "new_tab.html"
   },
   "background": {
     "service_worker": "background.js"
-  },
-  "commands": {
-    "toggle-write-mode": {
-      "suggested_key": {
-        "default": "Ctrl+X",
-        "mac": "Command+X"
-      },
-      "description": "Toggle to write mode"
-    },
-    "toggle-read-mode": {
-      "suggested_key": {
-        "default": "Ctrl+S",
-        "mac": "Command+S"
-      },
-      "description": "Toggle to read mode"
-    }
   },
   "icons": {
     "48": "icons/icon48.png",
