@@ -27,12 +27,12 @@ And you can use the switch in the bottom right to toggle the theme.
 
 ### Code
 
-'''javascript
+\`\`\`javascript
 // This is a javascript code block
 function greet() {
   console.log("Hello, world!");
 }
-'''
+\`\`\`
 
 ### Blockquotes
 
