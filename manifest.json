@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Markdown New Tab",
-  "version": "1.0",
+  "version": "1.0.1",
   "description": "A new tab page that acts as a markdown editor for notes.",
   "permissions": ["storage", "commands", "activeTab"],
   "chrome_url_overrides": {
