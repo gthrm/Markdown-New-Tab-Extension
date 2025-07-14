@@ -6,7 +6,7 @@ A Chrome extension that replaces the new tab page with a markdown editor for tak
 
 - **Markdown Editor**: Write and preview markdown content
 - **Theme Toggle**: Switch between light and dark themes
-- **Keyboard Shortcuts**: 
+- **Keyboard Shortcuts**:
   - `Ctrl+X` / `Cmd+X`: Switch to Write Mode
   - `Ctrl+S` / `Cmd+S`: Switch to Read Mode
 - **Auto-save**: Content is automatically saved to browser storage
@@ -38,6 +38,7 @@ zip -r markdown-new-tab-extension.zip . -x "*.git*" "*.DS_Store*" "*node_modules
 ```
 
 The script automatically:
+
 - ✅ Removes old packages
 - ✅ Excludes development files
 - ✅ Shows package contents
@@ -53,6 +54,7 @@ When uploading to Chrome Web Store, you'll need to provide justifications for th
 **What it does**: Allows the extension to save and retrieve user's markdown content and theme preferences.
 
 **Store Justification Text**:
+
 ```
 This permission is required to save the user's markdown notes and theme preferences locally in the browser. The extension stores:
 - User's markdown content for persistence across browser sessions
@@ -65,6 +67,7 @@ This permission is required to save the user's markdown notes and theme preferen
 **What it does**: Enables keyboard shortcuts for switching between read/write modes.
 
 **Store Justification Text**:
+
 ```
 This permission enables keyboard shortcuts (Ctrl+X for write mode, Ctrl+S for read mode) to improve user experience and productivity. The shortcuts only function within the new tab page and do not interfere with other browser functionality.
 ```
@@ -74,6 +77,7 @@ This permission enables keyboard shortcuts (Ctrl+X for write mode, Ctrl+S for re
 **What it does**: Allows the background script to communicate with the new tab page for keyboard shortcuts.
 
 **Store Justification Text**:
+
 ```
 This permission allows the extension's background script to send messages to the new tab page when keyboard shortcuts are triggered. This enables seamless switching between read and write modes via hotkeys. No browsing data or personal information is accessed.
 ```
@@ -83,6 +87,7 @@ This permission allows the extension's background script to send messages to the
 **What it does**: Replaces the default new tab page with the extension's markdown editor.
 
 **Store Justification Text**:
+
 ```
 This permission replaces the browser's default new tab page with a markdown editor interface. This is the core functionality of the extension - providing users with a productive note-taking environment every time they open a new tab.
 ```
@@ -135,4 +140,24 @@ Last Updated: [Current Date]
 
 ## License
 
-[Add your license here] 
+MIT License
+
+Copyright (c) 2024 Markdown New Tab Extension
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
