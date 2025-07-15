@@ -120,26 +120,26 @@ document.addEventListener("DOMContentLoaded", () => {
 editor.addEventListener("paste", (e) => {
   if (isWriteMode) {
     e.preventDefault();
-    
+
     // Get plain text from clipboard
     const plainText = e.clipboardData.getData("text/plain");
-    
+
     // Insert plain text at current cursor position
     const selection = window.getSelection();
     if (!selection.rangeCount) return;
-    
+
     const range = selection.getRangeAt(0);
     range.deleteContents();
-    
+
     const textNode = document.createTextNode(plainText);
     range.insertNode(textNode);
-    
+
     // Move cursor to end of inserted text
     range.setStartAfter(textNode);
     range.setEndAfter(textNode);
     selection.removeAllRanges();
     selection.addRange(range);
-    
+
     // Save the updated content
     markdownContent = editor.innerText;
     chrome.storage.sync.set({ markdown: markdownContent });
