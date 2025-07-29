@@ -63,7 +63,7 @@ function setWriteMode() {
 function toggleTheme() {
   currentTheme = currentTheme === "theme-dark" ? "theme-light" : "theme-dark";
   document.body.className = currentTheme;
-  chrome.storage.sync.set({ theme: currentTheme });
+  browser.storage.sync.set({ theme: currentTheme });
 }
 
 function generateExportFilename() {
@@ -97,7 +97,7 @@ function exportMarkdown() {
 
 // Main initialization logic
 document.addEventListener("DOMContentLoaded", () => {
-  chrome.storage.sync.get(["markdown", "theme"], (result) => {
+  browser.storage.sync.get(["markdown", "theme"], (result) => {
     // Set theme
     if (result.theme) {
       currentTheme = result.theme;
@@ -142,7 +142,7 @@ editor.addEventListener("paste", (e) => {
 
     // Save the updated content
     markdownContent = editor.innerText;
-    chrome.storage.sync.set({ markdown: markdownContent });
+    browser.storage.sync.set({ markdown: markdownContent });
   }
 });
 
@@ -150,7 +150,7 @@ editor.addEventListener("paste", (e) => {
 editor.addEventListener("keyup", () => {
   if (isWriteMode) {
     markdownContent = editor.innerText;
-    chrome.storage.sync.set({ markdown: markdownContent });
+    browser.storage.sync.set({ markdown: markdownContent });
   }
 });
 
